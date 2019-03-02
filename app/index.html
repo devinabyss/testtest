@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Basic</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .completed {
+        text-decoration: line-through;
+        color: #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <ul>
+        <todo-item v-for="(todo, index) in todos" :todo="todo" />
+      </ul>
+    </div>
+
+
+
+    <div id="form-text">
+      <select v-model="context">
+        <option>HOME</option>
+        <option>OFFICE</option>
+        <option>ETC</option>
+      </select>
+      <input v-model="message" type="text" /> <button @click="listPlus">ADD</button>
+      <p>Text : {{message}}</p>
+    </div>
+
+    <div id="counter">
+      <button @click="count">CLICK TEST</button>
+      <p>clicked : {{counter}}</p>
+    </div>
+
+    <p>
+
+    </p>
+    <p/>
+
+    <div id="counterView">
+      <button @click="todoFilter('total')">Total:{{totalCount}}</button>
+      <button @click="todoFilter('complete')">Complete:{{completeCount}}</button>
+      <button @click="todoFilter('incomplete')">Incomplete:{{incompleteCount}}</button>
+    </div>
+
+
+    <p/>
+
+    <div id="selectApp">
+      <select v-model="selected">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <span>Selected : {{selected}}</span>
+    </div>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
